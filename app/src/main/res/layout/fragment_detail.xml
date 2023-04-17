@@ -6,6 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/custom_title_bg"
+        android:padding="12dp"
+        android:text="Beth Smith"
+        android:textColor="@color/text_color"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
     <ImageView
         android:id="@+id/imageViewCharacter"
         android:layout_width="275dp"
@@ -16,8 +31,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </ImageView>
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"></ImageView>
 
     <LinearLayout
         android:id="@+id/linearLayoutDetailsBar"
@@ -37,9 +51,9 @@
             android:layout_marginVertical="5dp">
             <TextView
                 android:id="@+id/textViewStatusTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="Status"
+                android:text="@string/title_status"
                 android:textSize="22sp"
                 android:textStyle="bold"></TextView>
             <TextView
@@ -59,9 +73,9 @@
             android:layout_marginVertical="5dp">
             <TextView
                 android:id="@+id/textViewSpecyTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="Specy"
+                android:text="@string/title_specy"
                 android:textSize="22sp"
                 android:textStyle="bold"></TextView>
             <TextView
@@ -81,9 +95,9 @@
             android:layout_marginVertical="5dp">
             <TextView
                 android:id="@+id/textViewGenderTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="Gender"
+                android:text="@string/title_gender"
                 android:textSize="22sp"
                 android:textStyle="bold"></TextView>
             <TextView
@@ -103,9 +117,9 @@
             android:layout_marginVertical="5dp">
             <TextView
                 android:id="@+id/textViewOriginTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="Origin"
+                android:text="@string/title_origin"
                 android:textSize="22sp"
                 android:textStyle="bold"></TextView>
             <TextView
@@ -125,9 +139,9 @@
             android:layout_marginVertical="5dp">
             <TextView
                 android:id="@+id/textViewLocationTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="Location"
+                android:text="@string/title_location"
                 android:textSize="22sp"
                 android:textStyle="bold"></TextView>
             <TextView
@@ -147,9 +161,9 @@
             android:layout_marginVertical="5dp">
             <TextView
                 android:id="@+id/textViewEpisodesTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="Episodes"
+                android:text="@string/title_episodes"
                 android:textSize="22sp"
                 android:textStyle="bold"></TextView>
             <TextView
@@ -169,9 +183,9 @@
             android:layout_marginVertical="5dp">
             <TextView
                 android:id="@+id/textViewCreatedAtTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="CreatedAt"
+                android:text="@string/title_created"
                 android:textSize="22sp"
                 android:textStyle="bold"></TextView>
             <TextView
