@@ -11,9 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.hasanalic.rickandmorty.adapter.CharacterAdapter
 import com.hasanalic.rickandmorty.adapter.LocationAdapter
 import com.hasanalic.rickandmorty.databinding.FragmentListBinding
-import com.hasanalic.rickandmorty.util.Status
-import com.hasanalic.rickandmorty.util.hide
-import com.hasanalic.rickandmorty.util.show
+import com.hasanalic.rickandmorty.util.*
 import com.hasanalic.rickandmorty.viewmodel.ListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
