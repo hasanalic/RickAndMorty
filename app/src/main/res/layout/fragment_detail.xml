@@ -1,218 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/text_color">
+    android:background="@color/text_color"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/custom_title_bg"
-        android:padding="12dp"
-        android:textColor="@color/text_color"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageViewCharacter"
-        android:layout_width="275dp"
-        android:layout_height="275dp"
-        android:layout_marginHorizontal="50dp"
-        android:layout_marginVertical="20dp"
-        android:padding="2dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
-
-    <LinearLayout
-        android:id="@+id/linearLayoutDetailsBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginVertical="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageViewCharacter"
-        app:layout_constraintStart_toStartOf="@+id/imageViewCharacter"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewCharacter">
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/textViewTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="5dp">
+            android:layout_marginTop="12dp"
+            android:background="@drawable/custom_title_bg"
+            android:padding="12dp"
+            android:textColor="@color/text_color"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textViewStatusTitle"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="@string/title_status"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textViewStatusText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="5dp">
-
-            <TextView
-                android:id="@+id/textViewSpecyTitle"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="@string/title_specy"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textViewSpecyText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/imageViewCharacter"
+            android:layout_width="275dp"
+            android:layout_height="275dp"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginVertical="20dp"
+            android:padding="2dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
 
         <LinearLayout
+            android:id="@+id/linearLayoutDetailsBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="5dp">
+            android:orientation="vertical"
+            android:layout_marginVertical="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewCharacter"
+            app:layout_constraintStart_toStartOf="@+id/imageViewCharacter"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewCharacter">
 
-            <TextView
-                android:id="@+id/textViewGenderTitle"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="@string/title_gender"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textViewGenderText"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
-                android:textStyle="normal" />
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:id="@+id/textViewStatusTitle"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_status"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewStatusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:id="@+id/textViewSpecyTitle"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_specy"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSpecyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:id="@+id/textViewGenderTitle"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_gender"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewGenderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:id="@+id/textViewOriginTitle"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_origin"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewOriginText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:id="@+id/textViewLocationTitle"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_location"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewLocationText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:id="@+id/textViewEpisodesTitle"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_episodes"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewEpisodesText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp">
+
+                <TextView
+                    android:id="@+id/textViewCreatedAtTitle"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_created"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewCreatedAtText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
         </LinearLayout>
 
-        <LinearLayout
+        <ProgressBar
+            android:id="@+id/progressBarDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="5dp">
+            android:indeterminateTint="@color/button_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textViewOriginTitle"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="@string/title_origin"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/textViewOriginText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="5dp">
-
-            <TextView
-                android:id="@+id/textViewLocationTitle"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="@string/title_location"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textViewLocationText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="5dp">
-
-            <TextView
-                android:id="@+id/textViewEpisodesTitle"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="@string/title_episodes"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textViewEpisodesText"
-                android:layout_width="wrap_content"
-                android:layout_height="28sp"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="5dp">
-
-            <TextView
-                android:id="@+id/textViewCreatedAtTitle"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="@string/title_created"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textViewCreatedAtText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <ProgressBar
-        android:id="@+id/progressBarDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:indeterminateTint="@color/button_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
