@@ -18,5 +18,9 @@
         android:id="@+id/detailFragment"
         android:name="com.hasanalic.rickandmorty.view.DetailFragment"
         android:label="DetailFragment"
-        tools:layout="@layout/fragment_detail"/>
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="selectedCharacter"
+            app:argType="integer" />
+    </fragment>
 </navigation>
