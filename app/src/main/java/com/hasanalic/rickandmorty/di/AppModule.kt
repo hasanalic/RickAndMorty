@@ -1,6 +1,10 @@
 package com.hasanalic.rickandmorty.di
 
 import com.hasanalic.rickandmorty.api.RetrofitAPI
+import com.hasanalic.rickandmorty.repo.DetailRepository
+import com.hasanalic.rickandmorty.repo.DetailRepositoryImp
+import com.hasanalic.rickandmorty.repo.ListRepository
+import com.hasanalic.rickandmorty.repo.ListRepositoryImp
 import com.hasanalic.rickandmorty.util.Constants
 import dagger.Module
 import dagger.Provides
@@ -22,5 +26,17 @@ object AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(RetrofitAPI::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideListRepository(retrofitAPI: RetrofitAPI): ListRepository {
+        return ListRepositoryImp(retrofitAPI)
+    }
+
+    @Singleton
+    @Provides
+    fun provideDetailRepository(retrofitAPI: RetrofitAPI): DetailRepository {
+        return DetailRepositoryImp(retrofitAPI)
     }
 }
