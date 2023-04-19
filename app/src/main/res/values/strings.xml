@@ -7,4 +7,5 @@
     <string name="title_location">Location:</string>
     <string name="title_episodes">Episodes:</string>
     <string name="title_created">Created At:</string>
+    <string name="error_list">Error! Try again.</string>
 </resources>
