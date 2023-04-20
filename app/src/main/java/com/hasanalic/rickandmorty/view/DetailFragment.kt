@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.hasanalic.rickandmorty.databinding.FragmentDetailBinding
 import com.hasanalic.rickandmorty.util.*
 import com.hasanalic.rickandmorty.viewmodel.DetailViewModel
@@ -27,6 +28,10 @@ class DetailFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(requireActivity()).get(DetailViewModel::class.java)
+
+        binding.imageViewBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
 
         arguments?.let {
             val characterID = DetailFragmentArgs.fromBundle(it).selectedCharacter
