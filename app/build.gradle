@@ -76,9 +76,6 @@ dependencies {
     implementation "com.google.android.material:material:1.8.0"
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
 
-    //Splash api
-    implementation 'androidx.core:core-splashscreen:1.0.0'
-
     //Toast
     implementation 'io.github.muddz:styleabletoast:2.4.0'
 
