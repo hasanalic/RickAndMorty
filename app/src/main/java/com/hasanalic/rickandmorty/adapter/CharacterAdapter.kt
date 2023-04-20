@@ -46,7 +46,7 @@ class CharacterAdapter: RecyclerView.Adapter<CharacterAdapter.MyViewHolder>() {
                 "Genderless" -> {
                     binding.imageViewGender.setImageDrawable(AppCompatResources.getDrawable(binding.root.context,R.drawable.genderless))
                 }
-                "Unknown" -> {
+                "unknown" -> {
                     binding.imageViewGender.setImageDrawable(AppCompatResources.getDrawable(binding.root.context,R.drawable.unknown))
                 }
             }
