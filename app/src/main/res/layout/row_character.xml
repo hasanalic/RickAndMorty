@@ -12,7 +12,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="12dp"
         android:orientation="horizontal"
-        android:background="@color/white">
+        android:background="@drawable/custom_character_row_bg">
 
         <ImageView
             android:id="@+id/imageViewRowCharacter"
@@ -28,16 +28,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Beth Smith"
             android:textColor="@color/black"
-            android:textSize="26sp" />
+            android:textSize="26sp"
+            android:fontFamily="@font/avenir_black"/>
     </LinearLayout>
 
     <ImageView
         android:id="@+id/imageViewGender"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginTop="17dp"
         android:background="@drawable/custom_gender_bg"
         app:layout_anchor="@+id/linearLayoutCharacterBar"
