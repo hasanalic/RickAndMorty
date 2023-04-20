@@ -57,18 +57,18 @@
 
                 <TextView
                     android:id="@+id/textViewStatusTitle"
-                    android:layout_width="120dp"
+                    android:layout_width="124dp"
                     android:layout_height="wrap_content"
                     android:text="@string/title_status"
                     android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/avenir_black"/>
 
                 <TextView
                     android:id="@+id/textViewStatusText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
-                    android:textStyle="normal" />
+                    android:fontFamily="@font/avenir_book" />
             </LinearLayout>
 
             <LinearLayout
@@ -80,18 +80,18 @@
 
                 <TextView
                     android:id="@+id/textViewSpecyTitle"
-                    android:layout_width="120dp"
+                    android:layout_width="124dp"
                     android:layout_height="wrap_content"
                     android:text="@string/title_specy"
                     android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/avenir_black"/>
 
                 <TextView
                     android:id="@+id/textViewSpecyText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
-                    android:textStyle="normal" />
+                    android:fontFamily="@font/avenir_book" />
             </LinearLayout>
 
             <LinearLayout
@@ -103,18 +103,18 @@
 
                 <TextView
                     android:id="@+id/textViewGenderTitle"
-                    android:layout_width="120dp"
+                    android:layout_width="124dp"
                     android:layout_height="wrap_content"
                     android:text="@string/title_gender"
                     android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/avenir_black"/>
 
                 <TextView
                     android:id="@+id/textViewGenderText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
-                    android:textStyle="normal" />
+                    android:fontFamily="@font/avenir_book" />
             </LinearLayout>
 
             <LinearLayout
@@ -126,18 +126,18 @@
 
                 <TextView
                     android:id="@+id/textViewOriginTitle"
-                    android:layout_width="120dp"
+                    android:layout_width="124dp"
                     android:layout_height="wrap_content"
                     android:text="@string/title_origin"
                     android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/avenir_black"/>
 
                 <TextView
                     android:id="@+id/textViewOriginText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
-                    android:textStyle="normal" />
+                    android:fontFamily="@font/avenir_book" />
             </LinearLayout>
 
             <LinearLayout
@@ -149,18 +149,18 @@
 
                 <TextView
                     android:id="@+id/textViewLocationTitle"
-                    android:layout_width="120dp"
+                    android:layout_width="124dp"
                     android:layout_height="wrap_content"
                     android:text="@string/title_location"
                     android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/avenir_black"/>
 
                 <TextView
                     android:id="@+id/textViewLocationText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
-                    android:textStyle="normal" />
+                    android:fontFamily="@font/avenir_book" />
             </LinearLayout>
 
             <LinearLayout
@@ -172,18 +172,18 @@
 
                 <TextView
                     android:id="@+id/textViewEpisodesTitle"
-                    android:layout_width="120dp"
+                    android:layout_width="124dp"
                     android:layout_height="wrap_content"
                     android:text="@string/title_episodes"
                     android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/avenir_black"/>
 
                 <TextView
                     android:id="@+id/textViewEpisodesText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
-                    android:textStyle="normal" />
+                    android:fontFamily="@font/avenir_book" />
             </LinearLayout>
 
             <LinearLayout
@@ -195,18 +195,18 @@
 
                 <TextView
                     android:id="@+id/textViewCreatedAtTitle"
-                    android:layout_width="120dp"
+                    android:layout_width="124dp"
                     android:layout_height="wrap_content"
                     android:text="@string/title_created"
                     android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/avenir_black"/>
 
                 <TextView
                     android:id="@+id/textViewCreatedAtText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
-                    android:textStyle="normal" />
+                    android:fontFamily="@font/avenir_book" />
             </LinearLayout>
 
         </LinearLayout>

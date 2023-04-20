@@ -57,7 +57,7 @@ class DetailFragment: Fragment() {
                     binding.textViewOriginText.text = it.data?.origin?.name?:"null"
                     binding.textViewLocationText.text = it.data?.location?.name?:"null"
                     binding.textViewEpisodesText.text = episodes
-                    binding.textViewCreatedAtText.text = it.data?.created?:"null"
+                    binding.textViewCreatedAtText.text = it.data?.created?.dateFormat(Constants.DATE_FORMAT)
                 }
                 Status.ERROR -> {
                     binding.progressBarDetail.hide()
