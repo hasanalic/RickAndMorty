@@ -18,9 +18,11 @@
             android:id="@+id/imageViewRowCharacter"
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:padding="4dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="8dp"
+            android:background="@drawable/custom_character_bg"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="12dp"
             android:scaleType="centerCrop" />
 
         <TextView
@@ -28,8 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:textColor="@color/black"
-            android:textSize="26sp"
+            android:textSize="22sp"
             android:fontFamily="@font/avenir_black"/>
     </LinearLayout>
 
