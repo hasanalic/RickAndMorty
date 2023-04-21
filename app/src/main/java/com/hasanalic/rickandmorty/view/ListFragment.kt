@@ -72,17 +72,14 @@ class ListFragment: Fragment() {
             when(it.status) {
                 Status.SUCCESS -> {
                     binding.progressBarList.hide()
-                    binding.textViewError.hide()
                     val locations = it.data?.locations ?: arrayListOf()
                     locationAdapter.locations = locations
                 }
                 Status.ERROR -> {
                     binding.progressBarList.hide()
-                    binding.textViewError.show()
                 }
                 Status.LOADING -> {
                     binding.progressBarList.show()
-                    binding.textViewError.hide()
                 }
             }
         }
@@ -90,17 +87,15 @@ class ListFragment: Fragment() {
             when(it.status) {
                 Status.SUCCESS -> {
                     binding.progressBarList.hide()
-                    binding.textViewError.hide()
                     locationAdapter.changeLocation(it.data ?: -1)
                 }
                 Status.ERROR -> {
                     binding.progressBarList.hide()
-                    binding.textViewError.text = "${it.message}! Try again."
-                    binding.textViewError.show()
+                    toast(requireContext(),it.message?:"error")
                 }
                 Status.LOADING -> {
                     binding.progressBarList.show()
-                    binding.textViewError.hide()
+
                 }
             }
         }
@@ -108,18 +103,16 @@ class ListFragment: Fragment() {
             when(it.status) {
                 Status.SUCCESS -> {
                     binding.progressBarList.hide()
-                    binding.textViewError.hide()
                     val characters = it.data ?: arrayListOf()
                     characterAdapter.characters = characters
                 }
                 Status.ERROR -> {
                     binding.progressBarList.hide()
-                    binding.textViewError.text = "${it.message}! Try again."
-                    binding.textViewError.show()
+                    toast(requireContext(),it.message?:"error")
+                    characterAdapter.characters = arrayListOf()
                 }
                 Status.LOADING -> {
                     binding.progressBarList.show()
-                    binding.textViewError.hide()
                 }
             }
         }

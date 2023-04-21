@@ -10,6 +10,7 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.hasanalic.rickandmorty.R
+import io.github.muddz.styleabletoast.StyleableToast
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -22,10 +23,9 @@ fun View.show() {
     visibility = View.VISIBLE
 }
 
-fun Fragment.toast(msg: String) {
-    Toast.makeText(requireContext(),msg, Toast.LENGTH_SHORT).show()
+fun Fragment.toast(context: Context ,msg: String) {
+    StyleableToast.makeText(context,msg,Toast.LENGTH_LONG,R.style.customToast).show()
 }
-
 
 fun ImageView.downloadFromUrl(url: String?, progressDrawable: CircularProgressDrawable) {
     val options = RequestOptions()
