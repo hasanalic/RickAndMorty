@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.hasanalic.rickandmorty.model.Location
 import com.hasanalic.rickandmorty.model.LocationResponse
 import com.hasanalic.rickandmorty.repo.ListRepository
 import com.hasanalic.rickandmorty.util.Constants
@@ -41,24 +42,30 @@ class ListViewModel @Inject constructor(
         }
     }
 
-    fun getNextLocationPage(page: String) {
-        val currentLocationList = _locations.value?.data?.locations
+    fun getNextLocationPage(page: Int) {
+        var currentLocationList = _locations.value?.data?.locations
         _locations.value = Resource.loading(null)
         viewModelScope.launch {
             val response = repository.getNextLocationPage(page)
             val nextPageLocationList = response.data?.locations
-            if (nextPageLocationList.isNullOrEmpty()) {
-                println("null veya empty")
-            } else {
-                println("yo degil")
-                println("ilk: " + nextPageLocationList.first().created)
+            nextPageLocationList?.let {
+                val nextPageLocationArrayList = ArrayList(it)
+                println("nextPageLocationArrayList : ${nextPageLocationArrayList.first()}")
+                currentLocationList?.let {current ->
+                    currentLocationList = current.plus(nextPageLocationArrayList)
+                    response.data.locations = currentLocationList as List<Location>
+                }
             }
+            /*
+            val response = repository.getNextLocationPage(page)
+            val nextPageLocationList = response.data?.locations
             nextPageLocationList?.let {
                 val currentLocationArrayList = ArrayList(currentLocationList?: listOf())
-                println("currentLocationArrayList[1]: ${currentLocationArrayList[1]}")
                 it.plus(currentLocationArrayList)
                 response.data.locations = it
             }
+
+             */
             _locations.value = response
         }
     }

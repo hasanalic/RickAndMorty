@@ -5,6 +5,7 @@ import com.hasanalic.rickandmorty.model.LocationResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface RetrofitAPI {
 
@@ -12,7 +13,7 @@ interface RetrofitAPI {
     suspend fun getLocations(): Response<LocationResponse>
 
     @GET("location")
-    suspend fun getNextLocationPage(@Path("page") page: String): Response<LocationResponse>
+    suspend fun getNextLocationPage(@Query("page") page: Int): Response<LocationResponse>
 
     @GET("location/{id}")
     suspend fun getSingleLocation(@Path("id") id: Int): Response<Location>

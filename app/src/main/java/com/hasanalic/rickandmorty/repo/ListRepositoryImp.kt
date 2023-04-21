@@ -25,7 +25,7 @@ class ListRepositoryImp @Inject constructor(
         }
     }
 
-    override suspend fun getNextLocationPage(page: String): Resource<LocationResponse> {
+    override suspend fun getNextLocationPage(page: Int): Resource<LocationResponse> {
         return try {
             val response = retrofitAPI.getNextLocationPage(page)
             if (response.isSuccessful) {

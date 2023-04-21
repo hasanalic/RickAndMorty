@@ -76,7 +76,7 @@ class ListFragment: Fragment() {
                 if (isScrolling && (currentItems + scrollOutItems == totalItems)) {
                     println("viewModel.getNextLocationPage(2)")
                     isScrolling = false
-                    viewModel.getNextLocationPage("2")
+                    viewModel.getNextLocationPage(2)
                 }
             }
         })
@@ -107,6 +107,7 @@ class ListFragment: Fragment() {
                     binding.progressBarLocations.hide()
                     val locations = it.data?.locations ?: arrayListOf()
                     locationAdapter.locations = locations
+                    locationAdapter.notifyDataSetChanged()
                 }
                 Status.ERROR -> {
                     println("error")
