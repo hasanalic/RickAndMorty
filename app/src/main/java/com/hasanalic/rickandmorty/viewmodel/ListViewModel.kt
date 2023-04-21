@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hasanalic.rickandmorty.model.LocationResponse
 import com.hasanalic.rickandmorty.repo.ListRepository
+import com.hasanalic.rickandmorty.util.Constants
 import com.hasanalic.rickandmorty.util.Resource
 import com.hasanalic.rickandmorty.util.Status
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -48,7 +49,7 @@ class ListViewModel @Inject constructor(
             if (response.status == Status.SUCCESS) {
                 _singleLocation.value = Resource.success(response.data?.id)
                 response.data?.residents?.map {
-                    ids = ids + it.substringAfter("https://rickandmortyapi.com/api/character/") + ","
+                    ids = ids + it.substringAfter(Constants.SUB_CHARACTER) + ","
                 }
             }
             getCharacters(ids)

@@ -9,6 +9,7 @@ class CustomSharedPreferences {
 
     companion object {
         private val PREFERENCE_GREETING = "greeting"
+        private val PREFERENCE_CONTROL = "control"
         private var sharedPreferences: SharedPreferences? = null
         @Volatile private var instance: CustomSharedPreferences? = null
 
@@ -30,5 +31,13 @@ class CustomSharedPreferences {
         }
     }
 
+    fun setControl(control: Boolean) {
+        sharedPreferences?.edit(commit = true) {
+            putBoolean(PREFERENCE_CONTROL,control)
+        }
+    }
+
     fun getMessage() = sharedPreferences?.getString(PREFERENCE_GREETING,"Welcome!")
+
+    fun getControl() = sharedPreferences?.getBoolean(PREFERENCE_CONTROL,true)
 }

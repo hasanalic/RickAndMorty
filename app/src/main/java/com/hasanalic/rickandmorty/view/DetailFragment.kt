@@ -48,7 +48,7 @@ class DetailFragment: Fragment() {
                     binding.progressBarDetail.hide()
                     var episodes: String = ""
                     it.data?.episode?.map { episode ->
-                        episodes = episodes + episode.substringAfter("https://rickandmortyapi.com/api/episode/") + ", "
+                        episodes = episodes + episode.substringAfter(Constants.SUB_EPISODE) + ", "
                     }
                     episodes = episodes.removeSuffix(", ")
                     // iu

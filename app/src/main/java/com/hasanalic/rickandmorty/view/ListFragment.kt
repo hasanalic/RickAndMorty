@@ -55,6 +55,14 @@ class ListFragment: Fragment() {
             val action = ListFragmentDirections.actionListFragmentToDetailFragment(it)
             Navigation.findNavController(view).navigate(action)
         }
+
+        val customSharedPreferences = CustomSharedPreferences(requireContext())
+        if (customSharedPreferences.getControl()!!) {
+            // true ise location 1'e ait karakterleri getir
+            viewModel.getSingleLocation(1)
+            customSharedPreferences.setControl(false)
+        }
+
         viewModel.getLocations()
         observer()
     }
