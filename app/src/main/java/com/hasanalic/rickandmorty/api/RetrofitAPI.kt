@@ -11,6 +11,9 @@ interface RetrofitAPI {
     @GET("location")
     suspend fun getLocations(): Response<LocationResponse>
 
+    @GET("location")
+    suspend fun getNextLocationPage(@Path("page") page: String): Response<LocationResponse>
+
     @GET("location/{id}")
     suspend fun getSingleLocation(@Path("id") id: Int): Response<Location>
 

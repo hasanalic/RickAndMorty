@@ -41,6 +41,28 @@ class ListViewModel @Inject constructor(
         }
     }
 
+    fun getNextLocationPage(page: String) {
+        val currentLocationList = _locations.value?.data?.locations
+        _locations.value = Resource.loading(null)
+        viewModelScope.launch {
+            val response = repository.getNextLocationPage(page)
+            val nextPageLocationList = response.data?.locations
+            if (nextPageLocationList.isNullOrEmpty()) {
+                println("null veya empty")
+            } else {
+                println("yo degil")
+                println("ilk: " + nextPageLocationList.first().created)
+            }
+            nextPageLocationList?.let {
+                val currentLocationArrayList = ArrayList(currentLocationList?: listOf())
+                println("currentLocationArrayList[1]: ${currentLocationArrayList[1]}")
+                it.plus(currentLocationArrayList)
+                response.data.locations = it
+            }
+            _locations.value = response
+        }
+    }
+
     fun getSingleLocation(id: Int) {
         _singleLocation.value = Resource.loading(null)
         viewModelScope.launch {

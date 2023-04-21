@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AbsListView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.hasanalic.rickandmorty.adapter.CharacterAdapter
 import com.hasanalic.rickandmorty.adapter.LocationAdapter
 import com.hasanalic.rickandmorty.databinding.FragmentListBinding
@@ -31,6 +33,11 @@ class ListFragment: Fragment() {
         CharacterAdapter()
     }
 
+    private var isScrolling = false
+    private var currentItems = 0
+    private var totalItems = 0
+    private var scrollOutItems = 0
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentListBinding.inflate(inflater,container,false)
         return binding.root
@@ -41,12 +48,38 @@ class ListFragment: Fragment() {
         viewModel = ViewModelProvider(requireActivity()).get(ListViewModel::class.java)
 
         // Adapters
-        binding.recyclerViewLocations.adapter = locationAdapter
-        binding.recyclerViewLocations.layoutManager = LinearLayoutManager(requireContext(),
+        val manager = LinearLayoutManager(requireContext(),
             LinearLayoutManager.HORIZONTAL,false)
+
+        binding.recyclerViewLocations.adapter = locationAdapter
+        binding.recyclerViewLocations.layoutManager = manager
         binding.recyclerViewCharacters.adapter = characterAdapter
         binding.recyclerViewCharacters.layoutManager = LinearLayoutManager(requireContext(),
             LinearLayoutManager.VERTICAL,false)
+
+        binding.recyclerViewLocations.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if (newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL) {
+                    println("newstate")
+                    isScrolling = true
+                }
+            }
+
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                currentItems = manager.childCount
+                totalItems = manager.itemCount
+                scrollOutItems = manager.findFirstVisibleItemPosition()
+                println("current items: $currentItems - total items: $totalItems - scroll items: $scrollOutItems")
+                println("is Scrolling: $isScrolling")
+                if (isScrolling && (currentItems + scrollOutItems == totalItems)) {
+                    println("viewModel.getNextLocationPage(2)")
+                    isScrolling = false
+                    viewModel.getNextLocationPage("2")
+                }
+            }
+        })
 
         locationAdapter.setOnItemClickListener {
             viewModel.getSingleLocation(it)
@@ -58,7 +91,6 @@ class ListFragment: Fragment() {
 
         val customSharedPreferences = CustomSharedPreferences(requireContext())
         if (customSharedPreferences.getControl()!!) {
-            // true ise location 1'e ait karakterleri getir
             viewModel.getSingleLocation(1)
             customSharedPreferences.setControl(false)
         }
@@ -71,15 +103,18 @@ class ListFragment: Fragment() {
         viewModel.locations.observe(viewLifecycleOwner) {
             when(it.status) {
                 Status.SUCCESS -> {
-                    binding.progressBarList.hide()
+                    println("success")
+                    binding.progressBarLocations.hide()
                     val locations = it.data?.locations ?: arrayListOf()
                     locationAdapter.locations = locations
                 }
                 Status.ERROR -> {
-                    binding.progressBarList.hide()
+                    println("error")
+                    binding.progressBarLocations.hide()
                 }
                 Status.LOADING -> {
-                    binding.progressBarList.show()
+                    println("loading")
+                    binding.progressBarLocations.show()
                 }
             }
         }

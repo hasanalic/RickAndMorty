@@ -25,6 +25,21 @@ class ListRepositoryImp @Inject constructor(
         }
     }
 
+    override suspend fun getNextLocationPage(page: String): Resource<LocationResponse> {
+        return try {
+            val response = retrofitAPI.getNextLocationPage(page)
+            if (response.isSuccessful) {
+                response.body()?.let {
+                    return@let Resource.success(it)
+                } ?: Resource.error("Null", null)
+            } else {
+                Resource.error("Error",null)
+            }
+        } catch (e: Exception) {
+            Resource.error(e.localizedMessage?:"No data", null)
+        }
+    }
+
     override suspend fun getSingleLocation(id: Int): Resource<Location> {
         return try {
             val response = retrofitAPI.getSingleLocation(id)
