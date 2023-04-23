@@ -11,6 +11,7 @@ class CustomSharedPreferences {
         private val PREFERENCE_GREETING = "greeting"
         private val PREFERENCE_CONTROL = "control"
         private val PREFERENCE_PAGE_COUNT = "page"
+        private val PREFERENCE_LOCATIONS = "locations"
         private var sharedPreferences: SharedPreferences? = null
         @Volatile private var instance: CustomSharedPreferences? = null
 
@@ -43,6 +44,14 @@ class CustomSharedPreferences {
             putInt(PREFERENCE_PAGE_COUNT,1)
         }
     }
+
+    fun setLocationControl(control: Boolean) {
+        sharedPreferences?.edit(commit = true) {
+            putBoolean(PREFERENCE_LOCATIONS,control)
+        }
+    }
+
+    fun getLocationControl() = sharedPreferences?.getBoolean(PREFERENCE_LOCATIONS,true)
 
     fun getNextPage(): Int {
         var pageCount = sharedPreferences?.getInt(PREFERENCE_PAGE_COUNT, 1)

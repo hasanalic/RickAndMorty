@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
         val customSharedPreferences = CustomSharedPreferences(this)
         customSharedPreferences.setControl(true)
         customSharedPreferences.setPageCount()
+        customSharedPreferences.setLocationControl(true)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }

@@ -88,7 +88,11 @@ class ListFragment: Fragment() {
             customSharedPreferences.setControl(false)
         }
 
-        viewModel.getLocations()
+        if (customSharedPreferences.getLocationControl()!!) {
+            viewModel.getLocations()
+            customSharedPreferences.setLocationControl(false)
+        }
+
         observer()
     }
 
