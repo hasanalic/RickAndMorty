@@ -26,9 +26,9 @@ Bu mobil uygulama, kullanıcının Rick and Morty lokasyonlarını ve karakterle
   * [Glide](https://github.com/bumptech/glide) - Resim yükleme işlemleri için kullanılır.
   * [Styleabletoast](https://github.com/Muddz/StyleableToast) - Özelleştirilebilir Toast mesajları oluşturmak için kullanılır.
   * [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) - Asenkron işlemler için kullanılır.
-  * [Dagger-Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Dependencies Injection yapmak için kullanılır.
-  * [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) - Asenkron işlemler için kullanılır.
+  * [Dagger-Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Dependency Injection yapmak için kullanılır.
   * [Retrofit](https://square.github.io/retrofit/) - API isteklerini yapmak için kullanılır.
+  * [SharedPreferences](https://developer.android.com/reference/android/content/SharedPreferences) - Küçük verileri kaydetmek için kullanılır.
 
 ### Kurulum
 --------------
