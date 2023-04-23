@@ -40,6 +40,10 @@ git clone https://github.com/hasanalic/RickAndMorty.git
 3. Projenin bağımlılıklarını yüklemek için Gradle projeyi senkronize edin.
 4. Uygulamayı çalıştırın.
 
+### Kullanım
+--------------
+https://user-images.githubusercontent.com/78374444/233870916-4a5417b4-e8c9-466e-bcba-f1a2a5ac0b6a.mp4
+
 ### Ekran Görüntüleri
 --------------
 | Splash Sayfası | Splash Sayfası - 2 | Ana Sayfa | Karakter Detay Sayfası |
