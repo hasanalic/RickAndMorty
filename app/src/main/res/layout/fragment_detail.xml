@@ -80,6 +80,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/title_status"
                     android:textSize="22sp"
+                    android:textStyle="bold"
                     android:fontFamily="@font/avenir_black"/>
 
                 <TextView
@@ -87,6 +88,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
+                    android:textStyle="normal"
                     android:fontFamily="@font/avenir_book" />
             </LinearLayout>
 
@@ -103,6 +105,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/title_specy"
                     android:textSize="22sp"
+                    android:textStyle="bold"
                     android:fontFamily="@font/avenir_black"/>
 
                 <TextView
@@ -110,6 +113,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
+                    android:textStyle="normal"
                     android:fontFamily="@font/avenir_book" />
             </LinearLayout>
 
@@ -126,6 +130,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/title_gender"
                     android:textSize="22sp"
+                    android:textStyle="bold"
                     android:fontFamily="@font/avenir_black"/>
 
                 <TextView
@@ -133,6 +138,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
+                    android:textStyle="normal"
                     android:fontFamily="@font/avenir_book" />
             </LinearLayout>
 
@@ -149,6 +155,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/title_origin"
                     android:textSize="22sp"
+                    android:textStyle="bold"
                     android:fontFamily="@font/avenir_black"/>
 
                 <TextView
@@ -156,6 +163,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
+                    android:textStyle="normal"
                     android:fontFamily="@font/avenir_book" />
             </LinearLayout>
 
@@ -172,6 +180,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/title_location"
                     android:textSize="22sp"
+                    android:textStyle="bold"
                     android:fontFamily="@font/avenir_black"/>
 
                 <TextView
@@ -179,6 +188,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
+                    android:textStyle="normal"
                     android:fontFamily="@font/avenir_book" />
             </LinearLayout>
 
@@ -195,6 +205,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/title_episodes"
                     android:textSize="22sp"
+                    android:textStyle="bold"
                     android:fontFamily="@font/avenir_black"/>
 
                 <TextView
@@ -202,6 +213,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
+                    android:textStyle="normal"
                     android:fontFamily="@font/avenir_book" />
             </LinearLayout>
 
@@ -218,6 +230,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/title_created"
                     android:textSize="22sp"
+                    android:textStyle="bold"
                     android:fontFamily="@font/avenir_black"/>
 
                 <TextView
@@ -225,6 +238,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
+                    android:textStyle="normal"
                     android:fontFamily="@font/avenir_book" />
             </LinearLayout>
 
