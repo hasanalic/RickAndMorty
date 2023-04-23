@@ -51,7 +51,6 @@ class DetailFragment: Fragment() {
                         episodes = episodes + episode.substringAfter(Constants.SUB_EPISODE) + ", "
                     }
                     episodes = episodes.removeSuffix(", ")
-                    // iu
                     binding.textViewTitle.text = it.data?.name?:"null"
                     binding.imageViewCharacter.downloadFromUrl(it.data?.image?:"",
                         placeHolderProgressBar(requireContext())
