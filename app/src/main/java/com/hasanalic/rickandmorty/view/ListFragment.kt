@@ -46,8 +46,7 @@ class ListFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(requireActivity()).get(ListViewModel::class.java)
-
-        // Adapters
+        val customSharedPreferences = CustomSharedPreferences(requireContext())
         val manager = LinearLayoutManager(requireContext(),
             LinearLayoutManager.HORIZONTAL,false)
 
@@ -61,22 +60,17 @@ class ListFragment: Fragment() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL) {
-                    println("newstate")
                     isScrolling = true
                 }
             }
-
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 currentItems = manager.childCount
                 totalItems = manager.itemCount
                 scrollOutItems = manager.findFirstVisibleItemPosition()
-                println("current items: $currentItems - total items: $totalItems - scroll items: $scrollOutItems")
-                println("is Scrolling: $isScrolling")
                 if (isScrolling && (currentItems + scrollOutItems == totalItems)) {
-                    println("viewModel.getNextLocationPage(2)")
                     isScrolling = false
-                    viewModel.getNextLocationPage(2)
+                    viewModel.getNextLocationPage(customSharedPreferences.getNextPage())
                 }
             }
         })
@@ -89,7 +83,6 @@ class ListFragment: Fragment() {
             Navigation.findNavController(view).navigate(action)
         }
 
-        val customSharedPreferences = CustomSharedPreferences(requireContext())
         if (customSharedPreferences.getControl()!!) {
             viewModel.getSingleLocation(1)
             customSharedPreferences.setControl(false)
@@ -103,18 +96,15 @@ class ListFragment: Fragment() {
         viewModel.locations.observe(viewLifecycleOwner) {
             when(it.status) {
                 Status.SUCCESS -> {
-                    println("success")
                     binding.progressBarLocations.hide()
                     val locations = it.data?.locations ?: arrayListOf()
                     locationAdapter.locations = locations
                     locationAdapter.notifyDataSetChanged()
                 }
                 Status.ERROR -> {
-                    println("error")
                     binding.progressBarLocations.hide()
                 }
                 Status.LOADING -> {
-                    println("loading")
                     binding.progressBarLocations.show()
                 }
             }
@@ -124,6 +114,7 @@ class ListFragment: Fragment() {
                 Status.SUCCESS -> {
                     binding.progressBarList.hide()
                     locationAdapter.changeLocation(it.data ?: -1)
+                    locationAdapter.notifyDataSetChanged()
                 }
                 Status.ERROR -> {
                     binding.progressBarList.hide()

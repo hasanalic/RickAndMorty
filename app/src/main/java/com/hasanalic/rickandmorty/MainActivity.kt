@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         val customSharedPreferences = CustomSharedPreferences(this)
         customSharedPreferences.setControl(true)
+        customSharedPreferences.setPageCount()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }

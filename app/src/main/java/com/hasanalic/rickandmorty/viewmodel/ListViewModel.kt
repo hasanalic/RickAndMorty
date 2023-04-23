@@ -43,30 +43,21 @@ class ListViewModel @Inject constructor(
     }
 
     fun getNextLocationPage(page: Int) {
-        var currentLocationList = _locations.value?.data?.locations
-        _locations.value = Resource.loading(null)
-        viewModelScope.launch {
-            val response = repository.getNextLocationPage(page)
-            val nextPageLocationList = response.data?.locations
-            nextPageLocationList?.let {
-                val nextPageLocationArrayList = ArrayList(it)
-                println("nextPageLocationArrayList : ${nextPageLocationArrayList.first()}")
-                currentLocationList?.let {current ->
-                    currentLocationList = current.plus(nextPageLocationArrayList)
-                    response.data.locations = currentLocationList as List<Location>
+        if (page != -1) {
+            var currentLocationList = _locations.value?.data?.locations
+            _locations.value = Resource.loading(null)
+            viewModelScope.launch {
+                val response = repository.getNextLocationPage(page)
+                val nextPageLocationList = response.data?.locations
+                nextPageLocationList?.let {
+                    val nextPageLocationArrayList = ArrayList(it)
+                    currentLocationList?.let {current ->
+                        currentLocationList = current.plus(nextPageLocationArrayList)
+                        response.data.locations = currentLocationList as List<Location>
+                    }
                 }
+                _locations.value = response
             }
-            /*
-            val response = repository.getNextLocationPage(page)
-            val nextPageLocationList = response.data?.locations
-            nextPageLocationList?.let {
-                val currentLocationArrayList = ArrayList(currentLocationList?: listOf())
-                it.plus(currentLocationArrayList)
-                response.data.locations = it
-            }
-
-             */
-            _locations.value = response
         }
     }
 
