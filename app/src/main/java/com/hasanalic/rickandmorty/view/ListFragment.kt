@@ -69,6 +69,7 @@ class ListFragment: Fragment() {
                 totalItems = manager.itemCount
                 scrollOutItems = manager.findFirstVisibleItemPosition()
                 if (isScrolling && (currentItems + scrollOutItems == totalItems)) {
+                    binding.progressBarLocations.show()
                     isScrolling = false
                     viewModel.getNextLocationPage(customSharedPreferences.getNextPage())
                 }
